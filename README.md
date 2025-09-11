@@ -4,6 +4,7 @@
 <img width="1260" height="959" alt="image" src="https://github.com/user-attachments/assets/007f5415-f302-404e-8f81-7f53dcdb526e" />
 2. Скриншот в режиме Prototype
 <img width="1260" height="924" alt="image" src="https://github.com/user-attachments/assets/b5876610-3fbb-46f7-95ec-68f89a07b8cb" />
+
 3. Скриншоты в режиме Present
 
 <img width="545" height="917" alt="image" src="https://github.com/user-attachments/assets/5706b933-5abc-453b-becc-d4266546d983" />
