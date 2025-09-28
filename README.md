@@ -1,16 +1,13 @@
-# flutter_create_state_practice_doronina
+Практическое занятие №4 Способы компоновки элементов и контейнеры. Обработка событий. Управление состоянием. Обновление состояния виджетов при нажатии кнопок или других событиях.
 
-A new Flutter project.
+ЭФБО-09-23 Доронина Мария.
 
-## Getting Started
+В приложении использовались виджеты Scaffold, Center, Column, Text, ElevatedButton и Container. 
 
-This project is a starting point for a Flutter application.
+1.Скриншот работающего приложения с кнопками и счётчиком.
+<img width="390" height="643" alt="image" src="https://github.com/user-attachments/assets/eb7a92d3-274a-4a44-b63e-7b7f2491b0cc" />
 
-A few resources to get you started if this is your first Flutter project:
+2.Скриншот при значении счётчика > 10.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3.Скриншот после сброса.
+<img width="390" height="643" alt="image" src="https://github.com/user-attachments/assets/a3bbe568-1f24-47af-b98c-47562189b0e0" />
