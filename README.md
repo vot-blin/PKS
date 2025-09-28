@@ -12,3 +12,6 @@
 
 <img width="390" height="691" alt="image" src="https://github.com/user-attachments/assets/989ad276-f73b-4bd7-9d13-9f6cd718d803" />
 
+3.Скриншот после сброса.
+
+<img width="390" height="711" alt="image" src="https://github.com/user-attachments/assets/dcfa12d1-89a2-4e56-94ca-a371714dcdfa" />
