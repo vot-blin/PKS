@@ -4,6 +4,10 @@
 
 В приложении использовались виджеты Scaffold, Center, Column, Text, ElevatedButton и Container.
 
+1.Скриншот работающего приложения с кнопками и счётчиком.
+
+<img width="390" height="711" alt="image" src="https://github.com/user-attachments/assets/639d56c5-4c7e-4266-bed6-80f71f6f9a98" />
+
 2.Скриншот при значении счётчика > 10.
 
 <img width="390" height="691" alt="image" src="https://github.com/user-attachments/assets/989ad276-f73b-4bd7-9d13-9f6cd718d803" />
