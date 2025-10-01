@@ -1,16 +1,25 @@
-# simple_notes
+Практическое занятие №5. Работа со списками. Передача данных между модулями
 
-A new Flutter project.
+ЭФБО-09-23 Доронина Мария
 
-## Getting Started
+# Цели:
 
-This project is a starting point for a Flutter application.
+Научиться отображать коллекции данных с помощью ListView.builder.
 
-A few resources to get you started if this is your first Flutter project:
+Освоить базовую навигацию Navigator.push / Navigator.pop и передачу данных через конструктор.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Научиться добавлять, редактировать и удалять элементы списка без внешних пакетов и сложных архитектур.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Ход работы:
+
+
+
+
+
+1.Скриншот списока задач.
+
+2.Скриншот страницы создания задачи.
+
+3.Скриншот страницы редактирования задачи.
+
+4.Скриншот после удаления задачи.
