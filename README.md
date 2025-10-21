@@ -1,16 +1,16 @@
-# madshop_ui_doronina
+# Практическое занятие № 6 UI/UX дизайн. Верстка приложения по готовому дизайну (Figma → Flutter).
+# ЭФБО-09-23 Доронина Мария
+Цели:
 
-A new Flutter project.
+Освоить процесс переноса готового дизайна из Figma в Flutter.
 
-## Getting Started
+Изучить принципы адаптивной верстки мобильного интерфейса.
 
-This project is a starting point for a Flutter application.
+Научиться использовать стили, отступы и компоненты в соответствии с UI-гайдом.
 
-A few resources to get you started if this is your first Flutter project:
+Сверстать основные экраны мобильного приложения на основе предоставленного макета MAD Shopp Mobile App Design.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Получить навыки настройки навигации между экранами.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
