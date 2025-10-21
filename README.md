@@ -12,5 +12,5 @@
 
 Получить навыки настройки навигации между экранами.
 
-![Demo] (media/gif1.gif)
+![Demo](https://github.com/vot-blin/PKS/raw/Practic-6/media/gif1.gif)
 
