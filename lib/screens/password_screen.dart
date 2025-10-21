@@ -89,7 +89,7 @@ class PasswordScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 155),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 165),
                   ),
                   child: const Text(
                     'Start',

@@ -102,7 +102,7 @@ class CreateAccountScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20), // Круглые углы
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 150),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 160),
                   ),
                   child: const Text(
                     'Done',
