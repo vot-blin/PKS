@@ -1,16 +1,11 @@
-# firebase_notes_app
+# Практическое занятие № 8. Работа с базами данных. Подключение приложения к Firebase
 
-A new Flutter project.
+# ЭФБО-09-23 Доронина Мария
 
-## Getting Started
+Цели:
+Подключить Flutter-приложение к Firebase через FlutterFire CLI.
+Освоить инициализацию firebase_core и работу с Cloud Firestore (cloud_firestore).
+Реализовать базовый CRUD (создание, чтение в реальном времени, обновление, удаление) для коллекции данных.
+Настроить минимальные правила безопасности Firestore для учебной среды.
+Сформировать практические навыки диагностики и устранения типовых ошибок подключения.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
