@@ -31,4 +31,9 @@
 5. Скриншот после удаления.
 <img width="302" height="615" alt="image" src="https://github.com/user-attachments/assets/98b86795-ead2-4469-80a6-27b0ebd5380b" />
 
+Создание и привязка Firebase-проекта: Firebase CLI + Console, с помощью flutterfire configure
+Процесс: Авторизация в браузере, после выбор/создание проекта Firebase, дальше настройка платформ (Android, iOS, Web) и автогенерация конфигурационных файлов.
 
+Я использовала firebase_core и cloud_firestore, инициализировала в main.dart.
+
+Использованные правила безопасности allow read, write: if true разрешают полный доступ к данным всем пользователям. В продакшн-среде необходимо реализовать строгие правила с аутентификацией.
