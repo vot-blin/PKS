@@ -16,6 +16,12 @@
 <img width="1192" height="595" alt="image" src="https://github.com/user-attachments/assets/0cab5805-42a8-4aa2-901e-67505ad0aa06" />
 
 2. Скриншот экрана входа и экрана со списком (пустого и с данными).
+<img width="304" height="577" alt="image" src="https://github.com/user-attachments/assets/890c0fec-9549-410c-9669-3855ceab8bd5" />
+<img width="295" height="604" alt="image" src="https://github.com/user-attachments/assets/9b6ae121-d79e-465b-883f-ad6e783afb7b" />
 
 3. Скриншот после добавления заметки (элемент появился).
+<img width="288" height="609" alt="image" src="https://github.com/user-attachments/assets/b806b9f1-7704-425b-8965-a6d53309293b" />
+
 4. Скриншот после редактирования и после удаления.
+<img width="296" height="614" alt="image" src="https://github.com/user-attachments/assets/998aeb8f-32d9-4ad5-93e1-7b243c8d62ae" />
+<img width="295" height="604" alt="image" src="https://github.com/user-attachments/assets/e480f7de-a6b8-4485-bed5-3753b9c3c313" />
