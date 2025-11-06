@@ -1,16 +1,12 @@
-# supabase_notes_app
+# Практическое занятие № 9 Работа с базами данных. Подключение приложения к Supabase (Flutter).
+# ЭФБО-09-23 Доронина Мария
 
-A new Flutter project.
+# Цели:
+Подключить Flutter-приложение к Supabase (Postgres + Auth + Realtime).
 
-## Getting Started
+Освоить инициализацию supabase_flutter, чтение/запись данных и потоковые обновления (stream()).
 
-This project is a starting point for a Flutter application.
+Реализовать базовый CRUD (создание, чтение, обновление, удаление) с реактивным списком.
 
-A few resources to get you started if this is your first Flutter project:
+Включить Row Level Security (RLS) и настроить безопасные политики доступа для аутентифицированных пользователей.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
