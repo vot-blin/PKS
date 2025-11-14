@@ -1,16 +1,14 @@
-# notes_sqlite_app
+# Работа с базами данных. Подключение к SQLite (Flutter, sqflite)
+# ЭФБО-09-23 Доронина Мария 
+# Цели работы:
 
-A new Flutter project.
 
-## Getting Started
+Скриншот приложения с пустым списком (первый запуск).
 
-This project is a starting point for a Flutter application.
+Скриншот после добавления заметки.
 
-A few resources to get you started if this is your first Flutter project:
+Скриншот окна редактирования и итоговой записи.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Скриншот после удаления (запись исчезла).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Текстом (0,5–1 стр.): где хранится файл БД, как устроены таблица и индексы, как реализованы CRUD.
