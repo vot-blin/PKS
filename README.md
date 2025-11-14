@@ -10,17 +10,21 @@
 Отработать миграции схемы и диагностику частых ошибок.
 # Ход работы:
 Скриншот приложения с пустым списком (первый запуск).
+
 <img width="482" height="968" alt="image" src="https://github.com/user-attachments/assets/06a90035-57dd-441e-9a3c-8e4b86ac81e4" />
 
 Скриншот после добавления заметки.
+
 <img width="463" height="949" alt="image" src="https://github.com/user-attachments/assets/7dc6c3c6-a72e-4df8-b263-97a4865e8b48" />
 
 Скриншот окна редактирования и итоговой записи.
+
 <img width="470" height="972" alt="image" src="https://github.com/user-attachments/assets/2bae3bfd-43f6-4170-a7c7-ffb5aba410b6" />
 
 <img width="471" height="968" alt="image" src="https://github.com/user-attachments/assets/39ad1a06-42ec-402f-afdf-c6d9c3b52d7f" />
 
 Скриншот после удаления (запись исчезла).
+
 <img width="482" height="983" alt="image" src="https://github.com/user-attachments/assets/3b9a868d-16a1-4941-a4bb-71e8f2b375a9" />
 
 Файл базы данных SQLite (`app.db`) хранится в приватной директории приложения на устройстве пользователя. 
