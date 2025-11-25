@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../models/note.dart';
 import '../data/api_client.dart';
 import '../data/notes_repository.dart';
@@ -16,6 +17,7 @@ class _NotesPageState extends State<NotesPage> {
   int _page = 1;
   bool _canLoadMore = true;
   bool _loading = false;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -25,9 +27,22 @@ class _NotesPageState extends State<NotesPage> {
       baseUrl: 'https://691c4f723aaeed735c905921.mockapi.io/api/',
     );
     repo = NotesRepository(client);
+    _scrollController.addListener(_onScroll);
     _refresh();
   }
+  void _onScroll() {
+    if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+      _loadMore();
+    }
+  }
 
+  @override
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    super.dispose();
+  }
+  
   Future<void> _refresh() async {
     setState(() {
       _page = 1;
@@ -135,13 +150,12 @@ class _NotesPageState extends State<NotesPage> {
         child: _items.isEmpty && _loading
             ? const Center(child: CircularProgressIndicator())
             : ListView.separated(
+                controller: _scrollController,
                 padding: const EdgeInsets.all(12),
                 itemCount: _items.length + (_canLoadMore ? 1 : 0),
                 separatorBuilder: (_, __) => const SizedBox(height: 8),
                 itemBuilder: (context, i) {
                   if (i == _items.length) {
-                    // футер для дозагрузки
-                    _loadMore();
                     return const Center(
                       child: Padding(
                         padding: EdgeInsets.all(16),
@@ -153,26 +167,19 @@ class _NotesPageState extends State<NotesPage> {
                   final note = _items[i];
                   return Card(
                     child: ListTile(
-                      leading: note.avatar.isNotEmpty
-                          ? CircleAvatar(
-                              child: Image.network(
-                                note.avatar,
-                                fit: BoxFit.cover,
-                                loadingBuilder: (context, child, loadingProgress) {
-                                  if (loadingProgress == null) return child;
-                                  return const CircularProgressIndicator(strokeWidth: 2);
-                                },
-                                errorBuilder: (context, error, stackTrace) {
-                                  return const Icon(Icons.person, size: 30);
-                                },
-                              ),
-                            )
-                          : const CircleAvatar(child: Icon(Icons.person)),
+                      leading: CircleAvatar(
+                        radius: 24,
+                        backgroundColor: Colors.grey[200],
+                        backgroundImage: note.avatar.isNotEmpty
+                            ? CachedNetworkImageProvider(note.avatar)
+                            : null,
+                        child: note.avatar.isEmpty
+                            ? const Icon(Icons.person, color: Colors.grey)
+                            : null,
+                      ),
                       title: Text(note.name),
-                      subtitle: Text(note.createdAt.split('T').first), // только дата
+                      subtitle: Text(note.createdAt.split('T').first),
                       onTap: () {
-                        // Можно открыть детали, если сделаешь NoteDetailsPage
-                        // Пока пропустим или покажи SnackBar
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('ID: ${note.id}')),
                         );
