@@ -1,16 +1,19 @@
-# api_notes_app
+# Практическое занятие №11 Работа с базами данных. Основы работы с API (HTTP/REST) для Flutter
+# ЭФБО-09-23 Доронина Мария
+# Цели:
+Понять базовые понятия HTTP/REST: методы, URL/эндпоинты, коды ответов, заголовки, тела запросов/ответов (JSON).
 
-A new Flutter project.
+Освоить основы интеграции Flutter-приложения с внешним API: http/dio, сериализация JSON, обработка ошибок и таймаутов.
 
-## Getting Started
+Научиться выстраивать слой данных с репозиторием и отделять его от UI (продолжаем архитектурную линию прошлых ПЗ).
 
-This project is a starting point for a Flutter application.
+Реализовать список сущностей из публичного API + экран деталей + форму создания/редактирования (с демонстрацией запросов).
 
-A few resources to get you started if this is your first Flutter project:
+Разобраться с пагинацией, фильтрацией, аутентификацией (Bearer), ретраями и UX при сетевых сбоях.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Вариант: B. Полный CRUD: на mockapi.io
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Ход работы
+Подключение и настройка Dio
+
+В файле data/api_client.dart создан класс ApiClient:
