@@ -13,30 +13,9 @@
 
 # Вариант: B. Полный CRUD: на mockapi.io
 
+<img width="1540" height="469" alt="image" src="https://github.com/user-attachments/assets/146ab1c1-40ef-4c57-90cf-dac012de8d3e" />
+
 # Ход работы
-Подключение и настройка Dio
-
-В файле data/api_client.dart создан класс ApiClient:
-
-Настроен базовый URL и заголовки JSON.
-
-Поддержка Bearer-токена для аутентификации (используется для учебного задела).
-
-# Репозиторий и слой данных
-Файл data/notes_repository.dart реализует CRUD-операции через API:
-
-Метод list поддерживает пагинацию через query-параметры.
-
-Методы create, update, delete позволяют работать с mockapi.io или jsonplaceholder.
-
-Слой данных отделён от UI, что повышает тестируемость и гибкость.
-
-# Модель данных
-Файл models/note.dart:
-
-Сериализация JSON реализована вручную через fromJson/toJson.
-
-Поддержка работы с API, где id может быть строкой.
 
 # Скриншоты работы приложения
 Скриншот экрана списка
