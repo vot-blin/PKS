@@ -41,10 +41,17 @@
 # Скриншоты работы приложения
 Скриншот экрана списка
 
+<img width="460" height="962" alt="image" src="https://github.com/user-attachments/assets/c0ac51e5-8d01-4862-ba60-c513ae951800" />
+
 Скриншот экрана деталей
+
+<img width="469" height="982" alt="image" src="https://github.com/user-attachments/assets/4981e9cf-693c-4207-ac10-fe3038c7c44f" />
 
 Скриншот диалога создания и результата
 
+<img width="478" height="961" alt="image" src="https://github.com/user-attachments/assets/2507532f-901c-44f7-b082-02018e67684b" />
+
+<img width="456" height="701" alt="image" src="https://github.com/user-attachments/assets/e38858e9-8c71-47ab-8b02-663e16344407" />
 
 
 
