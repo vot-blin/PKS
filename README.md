@@ -17,7 +17,7 @@
 
 # Ход работы
 
-Используемый API
+1. Используемый API.
 
 Тип: Вариант B — mockapi.io
 
@@ -39,6 +39,84 @@ API возвращает объекты вида:
   "createdAt": "2025-11-18T03:14:15.877Z"
 }
 ```
+
+2. Модель и репозиторий.
+```
+class Note {
+  final int id;
+  final String name;
+  final String avatar;
+  final String createdAt;
+
+  Note({
+    required this.id,
+    required this.name,
+    required this.avatar,
+    required this.createdAt,
+  });
+
+  factory Note.fromJson(Map<String, dynamic> json) {
+    return Note(
+      id: json['id'] is String ? int.tryParse(json['id']) ?? 0 : (json['id'] ?? 0),
+      name: json['name'] ?? '',
+      avatar: json['avatar'] ?? '',
+      createdAt: json['createdAt'] ?? '',
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id.toString(), // mockapi.io ожидает id как строку
+      'name': name,
+      'avatar': avatar,
+      'createdAt': createdAt,
+    };
+  }
+}
+```
+Репозиторий NotesRepository:
+
+Полностью соответствует структуре API.
+
+Использует Dio через ApiClient.
+
+Реализует полный CRUD:
+```
+Future<List<Note>> list({int page, int limit});
+Future<Note> get(int id);
+Future<Note> create(String name, String avatar);
+Future<Note> update(int id, String name, String avatar);
+Future<void> delete(int id);
+```
+
+3. Пагинация.
+
+Поддержка на уровне API: mockapi.io поддерживает ?page=...&limit=....
+
+Клиентская реализация:
+
+Используется ScrollController для отслеживания доскролла до конца.
+
+При достижении конца вызывается _loadMore().
+
+В текущей конфигурации загружаются все страницы, но можно ограничить (например, только первую).
+
+Запрет рекурсивных вызовов: проверка _loading и _canLoadMore.
+
+4. Обработка ошибок и таймауты.
+
+Таймауты: заданы в Dio через BaseOptions:
+```
+connectTimeout: const Duration(seconds: 10),
+receiveTimeout: const Duration(seconds: 10),
+```
+Обработка ошибок:
+
+Все сетевые вызовы обёрнуты в try/catch.
+
+При ошибке показывается SnackBar с сообщением.
+
+Проверка if (mounted) перед setState() — предотвращает ошибки после уничтожения виджета.
 # Скриншоты работы приложения
 Скриншот экрана списка
 
