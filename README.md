@@ -12,7 +12,7 @@
 Разобраться с разрешениями, обработкой изображений и сохранением данных.
 
 # Ход работы:
-Настройка разрешения платформ (Android)
+Настройка разрешения платформ (Android).
 
 Android (AndroidManifest.xml):
 ```
@@ -35,13 +35,13 @@ Android (AndroidManifest.xml):
 Сохраняет результат в локальное хранилище приложения.
 
 # Запрос разрешений:
-Через permission_handler
+Через permission_handler.
 ```
 if (Platform.isAndroid) {
-        await Permission.storage.request();
-      } else if (Platform.isIOS) {
-        await Permission.photos.request();
-      }
+  await Permission.storage.request();
+} else if (Platform.isIOS) {
+  await Permission.photos.request();
+}
 ```
 
 # Съёмка фото / выбор из галереи:
@@ -53,23 +53,25 @@ if (pickedFile != null) {
 ```
 # Сохранение в память устройства:
 
-Через path_provider
+Через path_provider.
 ```
 final dir = await getApplicationDocumentsDirectory();
 final newFile = await _image!.copy('${dir.path}/photo_${DateTime.now().millisecondsSinceEpoch}.jpg');
 ```
 # Скриншоты работы приложений:
 
-1. Главный экран
+1. Главный экран.
 
+<img width="484" height="973" alt="image" src="https://github.com/user-attachments/assets/3c27d17e-67a2-4612-8bcf-bf9979c5d260" />
 
+2. Камера в действии.
 
-2. Камера в действии
+<img width="491" height="990" alt="image" src="https://github.com/user-attachments/assets/e456076d-175b-4f6f-a3d9-72f54d247d31" />
 
+3. Отображение фото.
 
+<img width="480" height="997" alt="image" src="https://github.com/user-attachments/assets/5b2dc247-c0c2-437c-9b23-3fe0d643a833" />
 
-3. Отображение фото
+4. Уведомление о сохранении.
 
-
-
-4. Уведомление о сохранении 
+<img width="486" height="992" alt="image" src="https://github.com/user-attachments/assets/aed7d1f0-60a4-45b2-9c6d-5f4a845fc618" />
