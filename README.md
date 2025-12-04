@@ -1,16 +1,67 @@
-# sensors_geo_app
+# Практическое занятие № 13. Аппаратная часть мобильных устройств. Работа с геолокацией. Работа с различными датчиками устройства.
+# ЭФБО-09-23 Доронина Мария
 
-A new Flutter project.
+# Цели занятия:
+Изучить возможности работы с аппаратными датчиками и сервисами устройства.
 
-## Getting Started
+Освоить получение координат устройства с помощью геолокации.
 
-This project is a starting point for a Flutter application.
+Научиться определять местоположение, направление и движение.
 
-A few resources to get you started if this is your first Flutter project:
+Изучить работу с сенсорами: акселерометр, гироскоп, компас, освещенность и др.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Разработать мобильное приложение, использующее геолокацию и данные сенсоров.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Ход работы:
+
+Разрешения (Android) в файле AndroidManifest.xml:
+```
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
+
+Используемые пакеты:
+```
+dependencies:
+  flutter:
+    sdk: flutter
+  geolocator: ^10.1.0        
+  geocoding: ^2.2.0         
+  sensors_plus: ^5.0.0       
+  flutter_compass: ^0.7.0    
+```
+
+Получение геопозиции и обратное геокодирование:
+```
+Future<void> _getLocation() async {
+  bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  if (!serviceEnabled) return;
+
+  LocationPermission permission = await Geolocator.requestPermission();
+  if (permission == LocationPermission.denied) return;
+
+  final pos = await Geolocator.getCurrentPosition(
+    desiredAccuracy: LocationAccuracy.high,
+  );
+
+  List<Placemark> placemarks =
+      await placemarkFromCoordinates(pos.latitude, pos.longitude);
+
+  if (!mounted) return;
+
+  setState(() {
+    _position = pos;
+    _address =
+        '${placemarks.first.locality ?? ''}, ${placemarks.first.street ?? ''}';
+  });
+}
+```
+# Скриншоты приложения:
+Главный экран
+
+<img width="460" height="716" alt="image" src="https://github.com/user-attachments/assets/a4506f08-b32c-4bc1-b0c2-626c5943bfa8" />
+
+Отображение координат, адреса, реакции сенсоров и компаса
+
+<img width="469" height="560" alt="image" src="https://github.com/user-attachments/assets/88cdcf32-5531-49bb-845f-e54abf0c7d2c" />
+
