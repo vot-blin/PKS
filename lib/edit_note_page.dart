@@ -8,24 +8,40 @@ class EditNotePage extends StatefulWidget {
   @override
   State<EditNotePage> createState() => _EditNotePageState();
 }
+
 class _EditNotePageState extends State<EditNotePage> {
   final _formKey = GlobalKey<FormState>();
   late String _title = widget.existing?.title ?? '';
-  late String _body  = widget.existing?.body  ?? '';
+  late String _body = widget.existing?.body ?? '';
 
   void _save() {
-    if (!_formKey.currentState!.validate()) return;
-    _formKey.currentState!.save();
-    final result = (widget.existing == null)
-        ? Note(
-            id: DateTime.now().millisecondsSinceEpoch.toString(),
-            title: _title,
-            body: _body,
-          )
-        : widget.existing!.copyWith(title: _title, body: _body);
+    try {
+      if (!_formKey.currentState!.validate()) return;
+      _formKey.currentState!.save();
 
-    Navigator.pop(context, result);
+      if (_title.contains('ошибка')) {
+        throw Exception('Искусственная ошибка для теста!');
+      }
+
+      final result = (widget.existing == null)
+          ? Note(
+              id: DateTime.now().millisecondsSinceEpoch.toString(),
+              title: _title,
+              body: _body,
+            )
+          : widget.existing!.copyWith(title: _title, body: _body);
+
+      Navigator.pop(context, result);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Ошибка сохранения: ${e.toString()}'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     final isEdit = widget.existing != null;

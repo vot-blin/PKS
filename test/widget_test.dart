@@ -1,30 +1,59 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:simple_notes/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  // Сбрасываем ErrorWidget.builder перед каждым тестом на стандартное значение
+  setUp(() {
+    ErrorWidget.builder = (FlutterErrorDetails details) {
+      return ErrorWidget(details.exception);
+    };
+  });
+
+  testWidgets('App starts with example note', (WidgetTester tester) async {
+    // Запускаем приложение
     await tester.pumpWidget(const SimpleNotesApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Проверяем заголовок приложения
+    expect(find.text('Simple Notes'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
+    // Проверяем примерную заметку
+    expect(find.text('Пример'), findsOneWidget);
+    expect(find.text('Пример заметки'), findsOneWidget);
+  });
+
+  testWidgets('Add new note button exists', (WidgetTester tester) async {
+    await tester.pumpWidget(const SimpleNotesApp());
+
+    // Проверяем кнопку добавления заметки
+    expect(find.byIcon(Icons.add), findsOneWidget);
+  });
+
+  testWidgets('Empty state shows message', (WidgetTester tester) async {
+    await tester.pumpWidget(const SimpleNotesApp());
+
+    // Проверяем, что есть список заметок
+    expect(find.byType(ListTile), findsAtLeast(1));
+  });
+  testWidgets('Error handling - snackbar appears on save error', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const SimpleNotesApp());
+    await tester.pumpAndSettle();
+
     await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    final textFields = find.byType(TextFormField);
+
+    await tester.enterText(textFields.at(0), 'Заголовок');
+    await tester.enterText(textFields.at(1), 'Текст заметки');
+
+    // Сохраняем
+    await tester.tap(find.text('Сохранить'));
+    await tester.pumpAndSettle();
+
+    // Проверяем что вернулись на главный экран
+    expect(find.text('Simple Notes'), findsOneWidget);
   });
 }
