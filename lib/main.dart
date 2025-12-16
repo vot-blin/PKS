@@ -31,7 +31,7 @@ class SimpleNotesApp extends StatelessWidget {
       theme: ThemeData(useMaterial3: true),
       home: const NotesPage(),
       builder: (context, child) {
-        /*ErrorWidget.builder = (FlutterErrorDetails details) {
+        ErrorWidget.builder = (FlutterErrorDetails details) {
           return Container(
             color: Colors.white,
             padding: const EdgeInsets.all(20),
@@ -63,7 +63,7 @@ class SimpleNotesApp extends StatelessWidget {
               ],
             ),
           );
-        };*/
+        };
         return child!;
       },
     );
@@ -189,9 +189,9 @@ class _NotesPageState extends State<NotesPage> {
                 style: TextStyle(fontSize: 16),
               ),
             )
-          : ListView.separated(
+          : ListView.builder(
+              // ← ИЗМЕНЕНО: обратно на builder
               itemCount: _notes.length,
-              separatorBuilder: (context, index) => const Divider(height: 0),
               itemBuilder: (context, i) {
                 final note = _notes[i];
                 return Dismissible(
