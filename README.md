@@ -1,4 +1,4 @@
-# Практическое занятие №14 Тестирование и оптимизация мобильного приложения. Исправление ошибок (Flutter).
+<img width="574" height="1273" alt="изображение" src="https://github.com/user-attachments/assets/04744193-145c-45e8-8021-440cca3bd4ca" /># Практическое занятие №14 Тестирование и оптимизация мобильного приложения. Исправление ошибок (Flutter).
 # ЭФБО-09-23
 
 # Цели работы.
@@ -63,5 +63,28 @@ Tree-shake иконок.
 
 Удаление assets.
 
+Основной фрагмент кода перехватчика ошибок.
+
+```
+void main() {
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    print('Flutter Error: ${details.exception}');
+    print('Stack trace: ${details.stack}');
+  };
+
+  runZonedGuarded(
+    () {
+      runApp(const SimpleNotesApp());
+    },
+    (error, stackTrace) {
+      print('Uncaught Error: $error');
+      print('Stack trace: $stackTrace');
+    },
+  );
+}
+```
+
+<img width="574" height="1273" alt="изображение" src="https://github.com/user-attachments/assets/81f9cd46-ae1e-448c-a69d-c814e3f0a884" />
 
 
